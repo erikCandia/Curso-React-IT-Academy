@@ -1,0 +1,244 @@
+/*Maquetacion I Empiezo maquetando a nivel de Movil*/
+/*** Maquetando el menu para movil*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.cabecera{
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  padding:170px;
+}
+label[for="checkmenu"]{
+  padding:10px;
+  position: absolute;
+  left: 10px;
+  top:5px;
+  font-size: 30px;
+  user-select: none;
+  cursor: pointer;
+}
+nav{
+  animation:moverMenu 1.5s ease-in;  /*keyframe*/
+  position:fixed;
+  background-color: rgb(206, 193, 193);
+  color:black;
+  top:0px;
+  right: -200px;
+  width: 200px;
+  padding: 20px;
+}
+nav li{
+  list-style: none;
+  padding: 5px 0;
+  border-bottom: 1px solid black;
+  animation: presionar 1.5s infinite;
+}
+nav a{
+  text-decoration: none;
+  color: black;
+  
+}
+ul > img{
+  animation: girar ease 3s infinite;  /*keyframe*/
+}
+.fa{
+  padding:10px;
+  border-radius: 15px;
+}
+.fa:hover{
+  background-color: rgb(188, 188, 210);
+  transition: 1s;
+  color:white;
+}
+#checkmenu{
+  display: none;/*desaparece*/
+}
+#checkmenu:checked + nav{
+  right:0;
+  transition: .5s;
+}
+/*titulo del nav*/
+.titulo{
+  position: absolute;
+  bottom:0px;
+  left:10px;
+  right:10px;
+  background-color: rgba(69, 63, 63, 0.2);
+  padding:15px;
+}
+h2{
+  text-align: center;
+  color:rgba(204, 101, 67, 0.7);
+  font-weight:500;
+  font-size: 17px;
+}
+/*css de article*/
+main{
+  background-color: rgb(222, 212, 212);
+  padding:10px;
+}
+.article{
+  padding:0 10px;
+  background-color: rgb(250, 242, 242);
+}
+figure > img{
+  width:100%;
+}
+figure{
+  position:relative;
+}
+figcaption{
+  position: absolute;
+  bottom:20px;
+  left:5px;
+  color:rgb(253, 253, 11,.7);
+}
+h3{
+  padding:10px;
+  background-color: rgb(238, 107, 107);
+  color:white;
+  font-weight: 300;
+}
+.cultura > p, .cultura > a{
+  font-size: 17px;
+  padding:10px;
+  text-decoration: none;
+}
+.lorem, aside{
+  font-size: 17px;
+  padding: 10px;
+  background-color: rgb(206, 193, 193);
+}
+/*diseño para el footer*/
+footer{
+  padding:20px;
+  font-size: 16px;
+  text-align: center;
+  background-color: rgb(222, 212, 212);
+  border:10px solid white;
+}
+/********************************* Diseño para tablet ***************************************/
+@media(min-width: 768px){
+  /*** Maquetando el menu para tablet*/
+  .cabecera{
+    padding:20px 0 120px;
+  }
+  label[for="checkmenu"]{
+    display: none;
+  }
+  nav{
+    position: static;
+    background-color: transparent;
+    width: 100%;
+  }
+  nav ul{
+    display: flex;
+    justify-content:center;
+  }
+  nav li{
+    border-bottom: 0;/*desaparece el borde bajo*/
+    margin:12px;/*separacion entre li*/
+    font-size: 13px;/*size de la letra*/
+  }
+  nav a{
+    text-decoration: none;
+    color: rgb(133, 124, 124);
+    font-size: 16px;
+  }
+  /*titulo del nav*/
+  .titulo{
+    left:50px;
+    right:55px;
+    padding:35px 0;
+  }
+  h2{
+    text-align: center;
+    font-size: 19px;
+    color:rgba(204, 101, 67, 0.7);
+    font-weight:500;
+  }
+}
+/*************************************Diseño para ordenador *****************************/
+@media(min-width:990px){
+  /* Diseño del menu*/
+  nav ul{
+    display: flex;
+    justify-content:space-around;
+  }
+  /*Diseño del header*/
+  .cabecera{
+    padding:20px 0 160px;
+    margin: 0 50px;
+  }
+  main{
+    background-color: white;
+    padding:15px 50px;
+    display: flex;
+  }
+  main > section{
+    background-color: rgb(222, 212, 212);
+    padding:15px;
+  }
+  /*css de article*/
+  .article1, .article2{
+    display:flex;
+    background-color: white;
+  }
+  .cultura{
+    width: 50%;
+    margin:15px;
+  }
+  aside{
+    font-size: 16px;
+    padding: 10px;
+    margin-left:15px;
+    background-color: rgb(206, 193, 193);
+  }
+  /*diseño para el footer*/
+  footer{
+    padding:20px 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(222, 212, 212);
+    border:0;
+    margin:0 50px;
+  }
+}
+@keyframes moverMenu{
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes girar{
+  from{
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes presionar{
+  0%{
+    transform: scale(.99);
+    box-shadow: 0 0 0 0 rgba(227, 193, 182, .3);
+  }
+  70%{
+    transform: scale(1);
+    box-shadow: 0 0 0 25px rgba(215, 96, 50, 0);
+  }
+  100%{
+    transform: scale(.99);
+    box-shadow: 0 0 0 0 rgba(174, 54, 30, 0);
+  }
+}

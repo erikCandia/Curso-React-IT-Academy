@@ -1,0 +1,107 @@
+/*empiezo por el movil*/
+body{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:30px;
+}
+header{
+  padding:30px;
+  background-color: black;
+}
+.header1{
+  background-color: rgb(83, 83, 98);
+}
+.header2{
+  background-color: orange;
+}
+.header1, .header2{
+  padding:10px;
+}
+.elemento1{
+  background-color: rgb(225, 105, 105);
+}
+.elemento2{
+  background-color: yellow;
+}
+.elemento1, .elemento2{
+  padding:20px;
+  margin:30px;
+}
+/*css del main*/
+main{
+  background-color: rgb(223, 223, 10);
+}
+aside{
+  background-color: rgb(216, 105, 65);
+}
+.section1{
+  background-color: rgb(50, 85, 50);
+}
+.elemento3, .elemento4{
+  background-color: rgb(73, 176, 131);
+}
+.elemento5{
+  background-color: skyblue;
+}
+.elemento6{
+  background-color: rgb(186, 178, 90);
+}
+.elemento3, .elemento4, .elemento5, .elemento6, .footer{
+  padding:20px;
+  margin:30px;
+}
+main{
+  padding:30px;
+  margin-top:30px;
+}
+.section1, aside, footer{
+  padding:10px;
+}
+aside, footer{
+  margin-top:30px;
+}
+/*css del footer*/
+footer{
+  background-color: black;
+}
+.footer{
+  background-color: orange;
+}
+/*------------------ para tablet  ----------------------*/
+/*a partir de 768 px*/
+@media only screen and (min-width:768px) {
+  /*css del header*/
+  .header1{
+    display: flex;
+  }
+  .header1 div:first-of-type, .header1 div:last-of-type{
+    width:30%;
+  }
+  .header1 div:nth-of-type(2){
+    width: 70%;
+  }
+  /*css del main*/
+  .primero, .segundo{
+    display: flex;
+  }
+  .elemento3, .elemento4{
+    width:50%;
+    padding:20px;
+    margin:20px;
+  }
+}
+/*------------------ para ordenador------------------  ----------------------*/
+@media only screen and (min-width:992px) {
+  /*css del main*/
+  main{
+    display: flex;
+    justify-content: center;
+  }
+  .section1{
+    width:60%;
+  }
+  aside{
+    width:40%;
+    margin-top:0;
+  }
+}
